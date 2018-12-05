@@ -1,4 +1,6 @@
 ActiveAdmin.register Vaccination do
+
+ permit_params :cattle_id, :brinco, :tipo_vacina
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
