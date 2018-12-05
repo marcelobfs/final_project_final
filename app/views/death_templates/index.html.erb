@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All deaths
+    </h1>
+
+    <a href="/deaths/new" class="btn btn-block btn-outline-secondary">
+      Add a new death
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Cattle
+        </th>
+
+        <th>
+          Brinco
+        </th>
+
+        <th>
+          Causa
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @deaths.each do |death| %>
+      <tr>
+        <!-- Display death.id start -->
+        <td>
+          <%= death.id %>
+        </td>
+        <!-- Display death.id end -->
+
+        <!-- Display death.cattle_id start -->
+        <td>
+          <%= death.cattle_id %>
+        </td>
+        <!-- Display death.cattle_id end -->
+
+        <!-- Display death.brinco start -->
+        <td>
+          <%= death.brinco %>
+        </td>
+        <!-- Display death.brinco end -->
+
+        <!-- Display death.causa start -->
+        <td>
+          <%= death.causa %>
+        </td>
+        <!-- Display death.causa end -->
+
+        <!-- Display death.created_at start -->
+        <td>
+          <%= time_ago_in_words(death.created_at) %> ago
+        </td>
+        <!-- Display death.created_at end -->
+
+        <!-- Display death.updated_at start -->
+        <td>
+          <%= time_ago_in_words(death.updated_at) %> ago
+        </td>
+        <!-- Display death.updated_at end -->
+
+        <td>
+          <a href="/deaths/<%= death.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

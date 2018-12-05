@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Death #<%= @death.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/deaths" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link death start -->
+      <div class="col">
+        <a href="/deaths/<%= @death.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit death
+        </a>
+      </div>
+      <!-- Edit link death end -->
+
+      <!-- Delete link death start -->
+      <div class="col">
+        <a href="/delete_death/<%= @death.id %>" class="btn btn-block btn-outline-secondary">
+          Delete death
+        </a>
+      </div>
+      <!-- Delete link death end -->
+    </div>
+
+    <dl>
+      <dt>
+        Cattle
+      </dt>
+      <!-- Display cattle_id start -->
+      <dd>
+        <%= @death.cattle_id %>
+      </dd>
+      <!-- Display cattle_id end -->
+
+      <dt>
+        Brinco
+      </dt>
+      <!-- Display brinco start -->
+      <dd>
+        <%= @death.brinco %>
+      </dd>
+      <!-- Display brinco end -->
+
+      <dt>
+        Causa
+      </dt>
+      <!-- Display causa start -->
+      <dd>
+        <%= @death.causa %>
+      </dd>
+      <!-- Display causa end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@death.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@death.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

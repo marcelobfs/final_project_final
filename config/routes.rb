@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Death resource:
+
+  # CREATE
+  get("/deaths/new", { :controller => "deaths", :action => "new_form" })
+  post("/create_death", { :controller => "deaths", :action => "create_row" })
+
+  # READ
+  get("/deaths", { :controller => "deaths", :action => "index" })
+  get("/deaths/:id_to_display", { :controller => "deaths", :action => "show" })
+
+  # UPDATE
+  get("/deaths/:prefill_with_id/edit", { :controller => "deaths", :action => "edit_form" })
+  post("/update_death/:id_to_modify", { :controller => "deaths", :action => "update_row" })
+
+  # DELETE
+  get("/delete_death/:id_to_remove", { :controller => "deaths", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Vaccination resource:
 
   # CREATE
