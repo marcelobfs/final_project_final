@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Weighting resource:
+
+  # CREATE
+  get("/weightings/new", { :controller => "weightings", :action => "new_form" })
+  post("/create_weighting", { :controller => "weightings", :action => "create_row" })
+
+  # READ
+  get("/weightings", { :controller => "weightings", :action => "index" })
+  get("/weightings/:id_to_display", { :controller => "weightings", :action => "show" })
+
+  # UPDATE
+  get("/weightings/:prefill_with_id/edit", { :controller => "weightings", :action => "edit_form" })
+  post("/update_weighting/:id_to_modify", { :controller => "weightings", :action => "update_row" })
+
+  # DELETE
+  get("/delete_weighting/:id_to_remove", { :controller => "weightings", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Pregnancy resource:
 
   # CREATE

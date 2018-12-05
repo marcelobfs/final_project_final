@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @weighting.present? %>
+  <% if @weighting.errors.any? %>
+    <% @weighting.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new weighting
+</h1>
+
+
+<hr>
+
+<!-- Form weighting start -->
+<form action="/create_weighting" method="post">
+<!-- Form weighting end -->
+
+  <!-- Label and input for cattle_id start -->
+  <div class="form-group">
+    <label for="cattle_id">
+      Cattle
+    </label>
+
+    <!-- Input for cattle_id start -->
+    <input type="text" id="cattle_id" name="cattle_id" class="form-control" value="<%= @weighting.cattle_id %>">
+    <!-- Input for cattle_id end -->
+  </div>
+  <!-- Label and input for cattle_id end -->
+
+  <!-- Label and input for brinco start -->
+  <div class="form-group">
+    <label for="brinco">
+      Brinco
+    </label>
+
+    <!-- Input for brinco start -->
+    <input type="text" id="brinco" name="brinco" class="form-control" value="<%= @weighting.brinco %>">
+    <!-- Input for brinco end -->
+  </div>
+  <!-- Label and input for brinco end -->
+
+  <!-- Label and input for lote start -->
+  <div class="form-group">
+    <label for="lote">
+      Lote
+    </label>
+
+    <!-- Input for lote start -->
+    <input type="text" id="lote" name="lote" class="form-control" value="<%= @weighting.lote %>">
+    <!-- Input for lote end -->
+  </div>
+  <!-- Label and input for lote end -->
+
+  <!-- Label and input for peso start -->
+  <div class="form-group">
+    <label for="peso">
+      Peso
+    </label>
+
+    <!-- Input for peso start -->
+    <input type="text" id="peso" name="peso" class="form-control" value="<%= @weighting.peso %>">
+    <!-- Input for peso end -->
+  </div>
+  <!-- Label and input for peso end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create weighting
+  </button>
+</form>
+
+<hr>
+
+<a href="/weightings">
+  Go back
+</a>
