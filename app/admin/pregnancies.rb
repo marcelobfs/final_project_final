@@ -1,4 +1,6 @@
 ActiveAdmin.register Pregnancy do
+
+ permit_params :cattle_id, :brinco, :touro, :prenha
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
