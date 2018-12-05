@@ -33,6 +33,22 @@ class VaccinationsController < ApplicationController
     end
   end
 
+  def create_row_from_cattle
+    @vaccination = Vaccination.new
+
+    @vaccination.cattle_id = params.fetch("cattle_id")
+    @vaccination.brinco = params.fetch("brinco")
+    @vaccination.tipo_vacina = params.fetch("tipo_vacina")
+
+    if @vaccination.valid?
+      @vaccination.save
+
+      redirect_to("/cattles/#{@vaccination.cattle_id}", notice: "Vaccination created successfully.")
+    else
+      render("vaccination_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @vaccination = Vaccination.find(params.fetch("prefill_with_id"))
 

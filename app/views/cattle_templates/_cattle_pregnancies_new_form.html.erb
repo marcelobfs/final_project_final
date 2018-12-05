@@ -1,0 +1,49 @@
+<!-- Form pregnancy start -->
+<form action="/create_pregnancy_from_cattle" method="post">
+<!-- Form pregnancy end -->
+
+  <!-- Label and input for cattle_id start -->
+  <!-- Input for cattle_id start -->
+  <input type="hidden" name="cattle_id" value="<%= @cattle.id %>">
+  <!-- Input for cattle_id end -->
+
+  <!-- Label and input for brinco start -->
+  <div class="form-group">
+    <label for="brinco">
+      Brinco
+    </label>
+
+    <!-- Input for brinco start -->
+    <input type="text" id="brinco" name="brinco" class="form-control" value="<%= @pregnancy.brinco %>">
+    <!-- Input for brinco end -->
+  </div>
+  <!-- Label and input for brinco end -->
+
+  <!-- Label and input for touro start -->
+  <div class="form-group">
+    <label for="touro">
+      Touro
+    </label>
+
+    <!-- Input for touro start -->
+    <input type="text" id="touro" name="touro" class="form-control" value="<%= @pregnancy.touro %>">
+    <!-- Input for touro end -->
+  </div>
+  <!-- Label and input for touro end -->
+
+  <!-- Label and input for prenha start -->
+  <div class="form-group">
+    <label for="prenha">
+      Prenha
+    </label>
+
+    <!-- Input for prenha start -->
+    <input type="text" id="prenha" name="prenha" class="form-control" value="<%= @pregnancy.prenha %>">
+    <!-- Input for prenha end -->
+  </div>
+  <!-- Label and input for prenha end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pregnancy
+  </button>
+</form>

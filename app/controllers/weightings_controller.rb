@@ -34,6 +34,23 @@ class WeightingsController < ApplicationController
     end
   end
 
+  def create_row_from_cattle
+    @weighting = Weighting.new
+
+    @weighting.cattle_id = params.fetch("cattle_id")
+    @weighting.brinco = params.fetch("brinco")
+    @weighting.lote = params.fetch("lote")
+    @weighting.peso = params.fetch("peso")
+
+    if @weighting.valid?
+      @weighting.save
+
+      redirect_to("/cattles/#{@weighting.cattle_id}", notice: "Weighting created successfully.")
+    else
+      render("weighting_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @weighting = Weighting.find(params.fetch("prefill_with_id"))
 

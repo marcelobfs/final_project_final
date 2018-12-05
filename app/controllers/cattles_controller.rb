@@ -6,6 +6,9 @@ class CattlesController < ApplicationController
   end
 
   def show
+    @vaccination = Vaccination.new
+    @weighting = Weighting.new
+    @pregnancy = Pregnancy.new
     @cattle = Cattle.find(params.fetch("id_to_display"))
 
     render("cattle_templates/show.html.erb")
