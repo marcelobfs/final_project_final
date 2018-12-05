@@ -4,6 +4,8 @@ RSpec.describe Cattle, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:weightings) }
+
     it { should have_many(:pregnancies) }
 
     it { should have_one(:cattle_sale) }

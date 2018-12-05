@@ -1,6 +1,9 @@
 class Cattle < ApplicationRecord
   # Direct associations
 
+  has_many   :weightings,
+             :dependent => :destroy
+
   has_many   :pregnancies,
              :dependent => :destroy
 
