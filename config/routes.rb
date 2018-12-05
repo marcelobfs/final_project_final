@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "cattles#index"
   # Routes for the Market price resource:
 
   # CREATE
