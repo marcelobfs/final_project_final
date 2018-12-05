@@ -1,4 +1,6 @@
 ActiveAdmin.register Cattle do
+
+ permit_params :brinco, :data_compra_ou_desmame, :data_nascimento, :origem, :raca, :sexo, :pai, :brinco_mae, :peso_entrada, :preco_por_kilo, :status
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
