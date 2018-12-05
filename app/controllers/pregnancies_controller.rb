@@ -90,4 +90,11 @@ class PregnanciesController < ApplicationController
 
     redirect_to("/pregnancies", :notice => "Pregnancy deleted successfully.")
   end
+  
+  def import
+    Pregnancy.import(params[:file])
+    record_activity("Subiu controle de prenhez")
+    redirect_to("/uploads", :notice => "Dados de prenhez importados com sucesso!")
+
+  end
 end

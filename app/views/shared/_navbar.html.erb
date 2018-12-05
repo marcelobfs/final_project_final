@@ -1,45 +1,58 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      FinalProjectFinal
-    </a>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/"><i class="fas fa-chart-line"></i> Coqueiro</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-nav-links" aria-controls="collapsible-nav-links" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes" aria-expanded="false">Rebanho <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+                <a class="dropdown-item" href="/deaths/new">Fatalidade</a>
+              </div>
+            </li>
+          <li class="nav-item"><a class="nav-link" href="/uploads">Upload</a></li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/reports" id="themes" aria-expanded="false">Relatórios <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+                <a class="dropdown-item" href="/reports">Relatórios</a>
+                <a class="dropdown-item" href="/weightings">Pesagem</a>
+                <a class="dropdown-item" href="/vaccinations">Vacinação</a>
+                <a class="dropdown-item" href="/pregnancies">Gravidez</a>
+                <a class="dropdown-item" href="/cattle">Catalogo</a>
+              </div>
+            </li>
+        </ul>
+          <ul class="navbar-nav">
+          
+          <% if current_user == nil %>
+          
+          <li class="nav-item">
+            <a href="/users/sign_in" class="nav-link" >
+              Login
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/users/sign_up" class="nav-link" >
+              Create Account
+            </a>
+          </li>
+          
+          <% else %>
+          
+          <li class="nav-item">
+            <a href="/users/edit" class="nav-link" >
+              <%= current_user.first_name %>
+            </a>
+          </li>
 
-    <div class="collapse navbar-collapse" id="collapsible-nav-links">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Resources
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a href="/market_prices" class="dropdown-item">
-              Market Prices
+          <li class="nav-item">
+            <a href="/users/sign_out" data-method="delete" class="nav-link">
+              Sign Out
             </a>
-            <a href="/activity_logs" class="dropdown-item">
-              Activity Logs
-            </a>
-            <a href="/cattle_sales" class="dropdown-item">
-              Cattle Sales
-            </a>
-            <a href="/deaths" class="dropdown-item">
-              Deaths
-            </a>
-            <a href="/vaccinations" class="dropdown-item">
-              Vaccinations
-            </a>
-            <a href="/weightings" class="dropdown-item">
-              Weightings
-            </a>
-            <a href="/pregnancies" class="dropdown-item">
-              Pregnancies
-            </a>
-            <a href="/cattles" class="dropdown-item">
-              Cattles
-            </a>
-          </div>
-        </li>
-      </ul>
-</nav>
+          </li>
+          <% end %>
+          
+        </ul>
+      </div>
+    </nav>

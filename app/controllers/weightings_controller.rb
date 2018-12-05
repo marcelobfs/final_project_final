@@ -90,4 +90,11 @@ class WeightingsController < ApplicationController
 
     redirect_to("/weightings", :notice => "Weighting deleted successfully.")
   end
+  
+  def import
+    Weighting.import(params[:file])
+    record_activity("Subiu controle de pesagem")
+    redirect_to("/uploads", :notice => "Dados de pesagem importados com sucesso!")
+
+  end
 end

@@ -1,25 +1,24 @@
 <h1>
-  Add a new death
+  Fatalidade
 </h1>
 
 
 <hr>
 
 <form action="/create_death" method="post">
-
+  
   <div class="form-group">
-    <label for="cattle_id">
-      Cattle
+    <label for="date">
+      Data
     </label>
 
-    <%= select_tag(:cattle_id, options_from_collection_for_select(Cattle.all, :id, :brinco, @death.cattle_id), :class => "form-control") %>
+    <input type="text" id="title" name="date" class="form-control" value= <%= Time.now.strftime('%d/%m/%Y') %>>
   </div>
 
   <div class="form-group">
     <label for="brinco">
       Brinco
     </label>
-
     <input type="text" id="brinco" name="brinco" class="form-control">
   </div>
 
@@ -32,12 +31,12 @@
   </div>
 
   <button class="btn btn-block btn-outline-secondary">
-    Create death
+    Atualizar morte
   </button>
 </form>
 
 <hr>
 
 <a href="/deaths">
-  Go back
+  Voltar
 </a>

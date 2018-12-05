@@ -20,14 +20,23 @@ class DeathsController < ApplicationController
 
   def create_row
     @death = Death.new
-
-    @death.cattle_id = params.fetch("cattle_id")
+    
+    @death.created_at = params.fetch("date")
     @death.brinco = params.fetch("brinco")
     @death.causa = params.fetch("causa")
+            
+            catalog = Cattle.where(brinco: @death.brinco)
+            
+            id={}
+            catalog.each do |cattle_id|
+            id[:cattle_id] = cattle_id.id
+            end
+            
+            @death.cattle_id = id[:cattle_id]
 
     if @death.valid?
       @death.save
-
+      record_activity("Registrou fatalidade")
       redirect_back(:fallback_location => "/deaths", :notice => "Death created successfully.")
     else
       render("death_templates/new_form_with_errors.html.erb")

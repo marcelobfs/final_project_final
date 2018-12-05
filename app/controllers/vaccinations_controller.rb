@@ -87,4 +87,11 @@ class VaccinationsController < ApplicationController
 
     redirect_to("/vaccinations", :notice => "Vaccination deleted successfully.")
   end
+  
+  def import
+    Vaccination.import(params[:file])
+    record_activity("Subiu controle de vacinação")
+    redirect_to("/uploads", :notice => "Dados de vacinação importados com sucesso!")
+
+  end
 end

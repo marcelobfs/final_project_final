@@ -65,4 +65,11 @@ class CattleSalesController < ApplicationController
 
     redirect_to("/cattle_sales", :notice => "Cattle sale deleted successfully.")
   end
+  
+  def import
+    CattleSale.import(params[:file])
+    record_activity("Subiu controle de vendas")
+    redirect_to("/uploads", :notice => "Dados de venda importados com sucesso!")
+
+  end
 end

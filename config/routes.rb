@@ -1,6 +1,23 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
-  root :to => "cattles#index"
+  
+  root :to => "navigations#index"
+  
+  # Routes for the Navigation pages resource:
+  
+  get("/home", { :controller => "navigations", :action => "index" })
+  get("/uploads", { :controller => "navigations", :action => "upload" })
+  get("/reports", { :controller => "navigations", :action => "report" })
+  
+  # Routes for the Import actions:
+  
+  post("/import_pregnancies", { :controller => "pregnancies", :action => "import" })
+  post("/import_births", { :controller => "births", :action => "import" })
+  post("/import_weanings", { :controller => "weanings", :action => "import" })
+  post("/import_purchases", { :controller => "cattles", :action => "import" })
+  post("/import_sales", { :controller => "cattle_sales", :action => "import" })
+  post("/import_vaccinations", { :controller => "vaccinations", :action => "import" })
+  post("/import_weightings", { :controller => "weightings", :action => "import" })
+  
   # Routes for the Market price resource:
 
   # CREATE
@@ -158,6 +175,10 @@ Rails.application.routes.draw do
   get("/delete_cattle/:id_to_remove", { :controller => "cattles", :action => "destroy_row" })
 
   #------------------------------
+  
+  devise_for :users
+  
+  ActiveAdmin.routes(self)
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
