@@ -1,0 +1,154 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Cattle #<%= @cattle.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/cattles" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link cattle start -->
+      <div class="col">
+        <a href="/cattles/<%= @cattle.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit cattle
+        </a>
+      </div>
+      <!-- Edit link cattle end -->
+
+      <!-- Delete link cattle start -->
+      <div class="col">
+        <a href="/delete_cattle/<%= @cattle.id %>" class="btn btn-block btn-outline-secondary">
+          Delete cattle
+        </a>
+      </div>
+      <!-- Delete link cattle end -->
+    </div>
+
+    <dl>
+      <dt>
+        Brinco
+      </dt>
+      <!-- Display brinco start -->
+      <dd>
+        <%= @cattle.brinco %>
+      </dd>
+      <!-- Display brinco end -->
+
+      <dt>
+        Data compra ou desmame
+      </dt>
+      <!-- Display data_compra_ou_desmame start -->
+      <dd>
+        <%= @cattle.data_compra_ou_desmame %>
+      </dd>
+      <!-- Display data_compra_ou_desmame end -->
+
+      <dt>
+        Data nascimento
+      </dt>
+      <!-- Display data_nascimento start -->
+      <dd>
+        <%= @cattle.data_nascimento %>
+      </dd>
+      <!-- Display data_nascimento end -->
+
+      <dt>
+        Origem
+      </dt>
+      <!-- Display origem start -->
+      <dd>
+        <%= @cattle.origem %>
+      </dd>
+      <!-- Display origem end -->
+
+      <dt>
+        Raca
+      </dt>
+      <!-- Display raca start -->
+      <dd>
+        <%= @cattle.raca %>
+      </dd>
+      <!-- Display raca end -->
+
+      <dt>
+        Sexo
+      </dt>
+      <!-- Display sexo start -->
+      <dd>
+        <%= @cattle.sexo %>
+      </dd>
+      <!-- Display sexo end -->
+
+      <dt>
+        Pai
+      </dt>
+      <!-- Display pai start -->
+      <dd>
+        <%= @cattle.pai %>
+      </dd>
+      <!-- Display pai end -->
+
+      <dt>
+        Brinco mae
+      </dt>
+      <!-- Display brinco_mae start -->
+      <dd>
+        <%= @cattle.brinco_mae %>
+      </dd>
+      <!-- Display brinco_mae end -->
+
+      <dt>
+        Peso entrada
+      </dt>
+      <!-- Display peso_entrada start -->
+      <dd>
+        <%= @cattle.peso_entrada %>
+      </dd>
+      <!-- Display peso_entrada end -->
+
+      <dt>
+        Preco por kilo
+      </dt>
+      <!-- Display preco_por_kilo start -->
+      <dd>
+        <%= @cattle.preco_por_kilo %>
+      </dd>
+      <!-- Display preco_por_kilo end -->
+
+      <dt>
+        Status
+      </dt>
+      <!-- Display status start -->
+      <dd>
+        <%= @cattle.status %>
+      </dd>
+      <!-- Display status end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@cattle.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@cattle.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
