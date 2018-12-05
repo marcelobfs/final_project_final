@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Market price resource:
+
+  # CREATE
+  get("/market_prices/new", { :controller => "market_prices", :action => "new_form" })
+  post("/create_market_price", { :controller => "market_prices", :action => "create_row" })
+
+  # READ
+  get("/market_prices", { :controller => "market_prices", :action => "index" })
+  get("/market_prices/:id_to_display", { :controller => "market_prices", :action => "show" })
+
+  # UPDATE
+  get("/market_prices/:prefill_with_id/edit", { :controller => "market_prices", :action => "edit_form" })
+  post("/update_market_price/:id_to_modify", { :controller => "market_prices", :action => "update_row" })
+
+  # DELETE
+  get("/delete_market_price/:id_to_remove", { :controller => "market_prices", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Activity log resource:
 
   # CREATE

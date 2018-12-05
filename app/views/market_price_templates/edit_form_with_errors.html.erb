@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @market_price.errors.any? %>
+  <% @market_price.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit market price #<%= @market_price.id %>
+</h1>
+
+<hr>
+
+<!-- Form market_price start -->
+<form action="/update_market_price/<%= @market_price.id %>" method="post">
+<!-- Form market_price end -->
+
+  <!-- Label and input for last_update start -->
+  <div class="form-group">
+    <label for="last_update">
+      Last update
+    </label>
+
+    <!-- Input for last_update start -->
+    <input type="text" id="last_update" name="last_update" class="form-control" value="<%= @market_price.last_update %>">
+    <!-- Input for last_update end -->
+  </div>
+  <!-- Label and input for last_update end -->
+
+  <!-- Label and input for observation start -->
+  <div class="form-group">
+    <label for="observation">
+      Observation
+    </label>
+
+    <!-- Input for observation start -->
+    <input type="text" id="observation" name="observation" class="form-control" value="<%= @market_price.observation %>">
+    <!-- Input for observation end -->
+  </div>
+  <!-- Label and input for observation end -->
+
+  <!-- Label and input for age_group start -->
+  <div class="form-group">
+    <label for="age_group">
+      Age group
+    </label>
+
+    <!-- Input for age_group start -->
+    <input type="text" id="age_group" name="age_group" class="form-control" value="<%= @market_price.age_group %>">
+    <!-- Input for age_group end -->
+  </div>
+  <!-- Label and input for age_group end -->
+
+  <!-- Label and input for gender start -->
+  <div class="form-group">
+    <label for="gender">
+      Gender
+    </label>
+
+    <!-- Input for gender start -->
+    <input type="text" id="gender" name="gender" class="form-control" value="<%= @market_price.gender %>">
+    <!-- Input for gender end -->
+  </div>
+  <!-- Label and input for gender end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @market_price.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update market price
+  </button>
+</form>
+
+<hr>
+
+<a href="/market_prices">
+  Go back
+</a>
