@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All cattle sales
+    </h1>
+
+    <a href="/cattle_sales/new" class="btn btn-block btn-outline-secondary">
+      Add a new cattle sale
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Cattle
+        </th>
+
+        <th>
+          Brinco
+        </th>
+
+        <th>
+          Peso
+        </th>
+
+        <th>
+          Preco por kilo
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @cattle_sales.each do |cattle_sale| %>
+      <tr>
+        <!-- Display cattle_sale.id start -->
+        <td>
+          <%= cattle_sale.id %>
+        </td>
+        <!-- Display cattle_sale.id end -->
+
+        <!-- Display cattle_sale.cattle_id start -->
+        <td>
+          <%= cattle_sale.cattle_id %>
+        </td>
+        <!-- Display cattle_sale.cattle_id end -->
+
+        <!-- Display cattle_sale.brinco start -->
+        <td>
+          <%= cattle_sale.brinco %>
+        </td>
+        <!-- Display cattle_sale.brinco end -->
+
+        <!-- Display cattle_sale.peso start -->
+        <td>
+          <%= cattle_sale.peso %>
+        </td>
+        <!-- Display cattle_sale.peso end -->
+
+        <!-- Display cattle_sale.preco_por_kilo start -->
+        <td>
+          <%= cattle_sale.preco_por_kilo %>
+        </td>
+        <!-- Display cattle_sale.preco_por_kilo end -->
+
+        <!-- Display cattle_sale.created_at start -->
+        <td>
+          <%= time_ago_in_words(cattle_sale.created_at) %> ago
+        </td>
+        <!-- Display cattle_sale.created_at end -->
+
+        <!-- Display cattle_sale.updated_at start -->
+        <td>
+          <%= time_ago_in_words(cattle_sale.updated_at) %> ago
+        </td>
+        <!-- Display cattle_sale.updated_at end -->
+
+        <td>
+          <a href="/cattle_sales/<%= cattle_sale.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Cattle sale resource:
+
+  # CREATE
+  get("/cattle_sales/new", { :controller => "cattle_sales", :action => "new_form" })
+  post("/create_cattle_sale", { :controller => "cattle_sales", :action => "create_row" })
+
+  # READ
+  get("/cattle_sales", { :controller => "cattle_sales", :action => "index" })
+  get("/cattle_sales/:id_to_display", { :controller => "cattle_sales", :action => "show" })
+
+  # UPDATE
+  get("/cattle_sales/:prefill_with_id/edit", { :controller => "cattle_sales", :action => "edit_form" })
+  post("/update_cattle_sale/:id_to_modify", { :controller => "cattle_sales", :action => "update_row" })
+
+  # DELETE
+  get("/delete_cattle_sale/:id_to_remove", { :controller => "cattle_sales", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Death resource:
 
   # CREATE
