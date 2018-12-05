@@ -34,7 +34,11 @@
       </dt>
       <!-- Display cattle_id start -->
       <dd>
-        <%= @vaccination.cattle_id %>
+        <% if @vaccination.cattle.present? %>
+          <a href="/cattles/<%= @vaccination.cattle_id %>">
+            <%= @vaccination.cattle.brinco %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display cattle_id end -->
 

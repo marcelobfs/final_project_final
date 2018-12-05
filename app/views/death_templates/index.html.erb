@@ -62,7 +62,11 @@
 
         <!-- Display death.cattle_id start -->
         <td>
-          <%= death.cattle.brinco %>
+          <% if death.cattle.present? %>
+            <a href="/cattles/<%= death.cattle.id %>">
+              <%= death.cattle.brinco %>
+            </a>
+          <% end %>
         </td>
         <!-- Display death.cattle_id end -->
 

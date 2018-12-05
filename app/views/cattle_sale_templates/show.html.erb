@@ -34,7 +34,11 @@
       </dt>
       <!-- Display cattle_id start -->
       <dd>
-        <%= @cattle_sale.cattle_id %>
+        <% if @cattle_sale.cattle.present? %>
+          <a href="/cattles/<%= @cattle_sale.cattle_id %>">
+            <%= @cattle_sale.cattle.brinco %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display cattle_id end -->
 
