@@ -1,6 +1,7 @@
 class ActivityLogsController < ApplicationController
   def index
-    @activity_logs = ActivityLog.page(params[:page]).per(10)
+    @q = ActivityLog.ransack(params[:q])
+    @activity_logs = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("activity_log_templates/index.html.erb")
   end

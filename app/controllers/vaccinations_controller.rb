@@ -1,6 +1,7 @@
 class VaccinationsController < ApplicationController
   def index
-    @vaccinations = Vaccination.page(params[:page]).per(10)
+    @q = Vaccination.ransack(params[:q])
+    @vaccinations = @q.result(:distinct => true).includes(:cattle).page(params[:page]).per(10)
 
     render("vaccination_templates/index.html.erb")
   end

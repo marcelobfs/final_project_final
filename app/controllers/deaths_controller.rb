@@ -1,6 +1,7 @@
 class DeathsController < ApplicationController
   def index
-    @deaths = Death.page(params[:page]).per(10)
+    @q = Death.ransack(params[:q])
+    @deaths = @q.result(:distinct => true).includes(:cattle).page(params[:page]).per(10)
 
     render("death_templates/index.html.erb")
   end

@@ -1,0 +1,194 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "cattles_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :brinco_cont, "Brinco contains" %>
+    <%= f.text_field :brinco_cont, :class => "form-control", :placeholder => "Brinco contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :status_cont, "Status contains" %>
+    <%= f.text_field :status_cont, :class => "form-control", :placeholder => "Status contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :preco_por_kilo, "Preco por kilo" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :preco_por_kilo_gteq, :class => "form-control", :placeholder => "Preco por kilo greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :preco_por_kilo_lteq, :class => "form-control", :placeholder => "Preco por kilo less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :peso_entrada, "Peso entrada" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :peso_entrada_gteq, :class => "form-control", :placeholder => "Peso entrada greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :peso_entrada_lteq, :class => "form-control", :placeholder => "Peso entrada less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :brinco_mae_cont, "Brinco mae contains" %>
+    <%= f.text_field :brinco_mae_cont, :class => "form-control", :placeholder => "Brinco mae contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pai_cont, "Pai contains" %>
+    <%= f.text_field :pai_cont, :class => "form-control", :placeholder => "Pai contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sexo_cont, "Sexo contains" %>
+    <%= f.text_field :sexo_cont, :class => "form-control", :placeholder => "Sexo contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :raca_cont, "Raca contains" %>
+    <%= f.text_field :raca_cont, :class => "form-control", :placeholder => "Raca contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :origem_cont, "Origem contains" %>
+    <%= f.text_field :origem_cont, :class => "form-control", :placeholder => "Origem contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :data_nascimento, "Data nascimento" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='data_nascimentogteqPicker' data-target-input="nearest">
+          <%= f.text_field :data_nascimento_gteq, :class => "form-control datetimepicker-input", :placeholder => "Data nascimento greater than or equal to", :data => {:target => '#data_nascimentogteqPicker'} %>
+          <div class="input-group-append" data-target='#data_nascimentogteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='data_nascimentolteqPicker' data-target-input="nearest">
+          <%= f.text_field :data_nascimento_lteq, :class => "form-control datetimepicker-input", :placeholder => "Data nascimento less than or equal to", :data => {:target => '#data_nascimentolteqPicker'} %>
+          <div class="input-group-append" data-target='#data_nascimentolteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#data_nascimentogteqPicker').datetimepicker({
+              format: 'MM/DD/YYYY'
+          });
+          $('#data_nascimentolteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'MM/DD/YYYY'
+          });
+          $('#data_nascimentogteqPicker').on("dp.change", function (e) {
+              $('#data_nascimentolteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#data_nascimentolteqPicker').on("dp.change", function (e) {
+              $('#data_nascimentogteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :data_compra_ou_desmame, "Data compra ou desmame" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='data_compra_ou_desmamegteqPicker' data-target-input="nearest">
+          <%= f.text_field :data_compra_ou_desmame_gteq, :class => "form-control datetimepicker-input", :placeholder => "Data compra ou desmame greater than or equal to", :data => {:target => '#data_compra_ou_desmamegteqPicker'} %>
+          <div class="input-group-append" data-target='#data_compra_ou_desmamegteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='data_compra_ou_desmamelteqPicker' data-target-input="nearest">
+          <%= f.text_field :data_compra_ou_desmame_lteq, :class => "form-control datetimepicker-input", :placeholder => "Data compra ou desmame less than or equal to", :data => {:target => '#data_compra_ou_desmamelteqPicker'} %>
+          <div class="input-group-append" data-target='#data_compra_ou_desmamelteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#data_compra_ou_desmamegteqPicker').datetimepicker({
+              format: 'MM/DD/YYYY'
+          });
+          $('#data_compra_ou_desmamelteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'MM/DD/YYYY'
+          });
+          $('#data_compra_ou_desmamegteqPicker').on("dp.change", function (e) {
+              $('#data_compra_ou_desmamelteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#data_compra_ou_desmamelteqPicker').on("dp.change", function (e) {
+              $('#data_compra_ou_desmamegteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/cattles" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#cattles_filters">
+  Show filters
+</a>

@@ -1,6 +1,7 @@
 class MarketPricesController < ApplicationController
   def index
-    @market_prices = MarketPrice.page(params[:page]).per(10)
+    @q = MarketPrice.ransack(params[:q])
+    @market_prices = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("market_price_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class PregnanciesController < ApplicationController
   def index
-    @pregnancies = Pregnancy.page(params[:page]).per(10)
+    @q = Pregnancy.ransack(params[:q])
+    @pregnancies = @q.result(:distinct => true).includes(:cattle).page(params[:page]).per(10)
 
     render("pregnancy_templates/index.html.erb")
   end

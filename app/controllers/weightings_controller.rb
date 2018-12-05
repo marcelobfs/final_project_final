@@ -1,6 +1,7 @@
 class WeightingsController < ApplicationController
   def index
-    @weightings = Weighting.page(params[:page]).per(10)
+    @q = Weighting.ransack(params[:q])
+    @weightings = @q.result(:distinct => true).includes(:cattle).page(params[:page]).per(10)
 
     render("weighting_templates/index.html.erb")
   end
