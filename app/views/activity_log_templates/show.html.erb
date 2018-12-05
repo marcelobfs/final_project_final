@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Activity log #<%= @activity_log.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/activity_logs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link activity_log start -->
+      <div class="col">
+        <a href="/activity_logs/<%= @activity_log.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit activity log
+        </a>
+      </div>
+      <!-- Edit link activity_log end -->
+
+      <!-- Delete link activity_log start -->
+      <div class="col">
+        <a href="/delete_activity_log/<%= @activity_log.id %>" class="btn btn-block btn-outline-secondary">
+          Delete activity log
+        </a>
+      </div>
+      <!-- Delete link activity_log end -->
+    </div>
+
+    <dl>
+      <dt>
+        User name
+      </dt>
+      <!-- Display user_name start -->
+      <dd>
+        <%= @activity_log.user_name %>
+      </dd>
+      <!-- Display user_name end -->
+
+      <dt>
+        Action
+      </dt>
+      <!-- Display action start -->
+      <dd>
+        <%= @activity_log.action %>
+      </dd>
+      <!-- Display action end -->
+
+      <dt>
+        Activity description
+      </dt>
+      <!-- Display activity_description start -->
+      <dd>
+        <%= @activity_log.activity_description %>
+      </dd>
+      <!-- Display activity_description end -->
+
+      <dt>
+        File name
+      </dt>
+      <!-- Display file_name start -->
+      <dd>
+        <%= @activity_log.file_name %>
+      </dd>
+      <!-- Display file_name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@activity_log.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@activity_log.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

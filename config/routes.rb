@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Activity log resource:
+
+  # CREATE
+  get("/activity_logs/new", { :controller => "activity_logs", :action => "new_form" })
+  post("/create_activity_log", { :controller => "activity_logs", :action => "create_row" })
+
+  # READ
+  get("/activity_logs", { :controller => "activity_logs", :action => "index" })
+  get("/activity_logs/:id_to_display", { :controller => "activity_logs", :action => "show" })
+
+  # UPDATE
+  get("/activity_logs/:prefill_with_id/edit", { :controller => "activity_logs", :action => "edit_form" })
+  post("/update_activity_log/:id_to_modify", { :controller => "activity_logs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_activity_log/:id_to_remove", { :controller => "activity_logs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Cattle sale resource:
 
   # CREATE
