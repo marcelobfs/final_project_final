@@ -1,6 +1,6 @@
 class VaccinationsController < ApplicationController
   def index
-    @vaccinations = Vaccination.all
+    @vaccinations = Vaccination.page(params[:page]).per(10)
 
     render("vaccination_templates/index.html.erb")
   end

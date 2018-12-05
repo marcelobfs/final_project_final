@@ -1,6 +1,6 @@
 class WeightingsController < ApplicationController
   def index
-    @weightings = Weighting.all
+    @weightings = Weighting.page(params[:page]).per(10)
 
     render("weighting_templates/index.html.erb")
   end

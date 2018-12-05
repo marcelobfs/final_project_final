@@ -1,6 +1,6 @@
 class ActivityLogsController < ApplicationController
   def index
-    @activity_logs = ActivityLog.all
+    @activity_logs = ActivityLog.page(params[:page]).per(10)
 
     render("activity_log_templates/index.html.erb")
   end

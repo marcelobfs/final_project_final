@@ -1,6 +1,6 @@
 class CattlesController < ApplicationController
   def index
-    @cattles = Cattle.all
+    @cattles = Cattle.page(params[:page]).per(10)
 
     render("cattle_templates/index.html.erb")
   end

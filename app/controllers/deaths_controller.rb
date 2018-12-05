@@ -1,6 +1,6 @@
 class DeathsController < ApplicationController
   def index
-    @deaths = Death.all
+    @deaths = Death.page(params[:page]).per(10)
 
     render("death_templates/index.html.erb")
   end

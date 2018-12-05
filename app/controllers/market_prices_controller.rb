@@ -1,6 +1,6 @@
 class MarketPricesController < ApplicationController
   def index
-    @market_prices = MarketPrice.all
+    @market_prices = MarketPrice.page(params[:page]).per(10)
 
     render("market_price_templates/index.html.erb")
   end
