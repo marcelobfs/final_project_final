@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Vaccination resource:
+
+  # CREATE
+  get("/vaccinations/new", { :controller => "vaccinations", :action => "new_form" })
+  post("/create_vaccination", { :controller => "vaccinations", :action => "create_row" })
+
+  # READ
+  get("/vaccinations", { :controller => "vaccinations", :action => "index" })
+  get("/vaccinations/:id_to_display", { :controller => "vaccinations", :action => "show" })
+
+  # UPDATE
+  get("/vaccinations/:prefill_with_id/edit", { :controller => "vaccinations", :action => "edit_form" })
+  post("/update_vaccination/:id_to_modify", { :controller => "vaccinations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_vaccination/:id_to_remove", { :controller => "vaccinations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Weighting resource:
 
   # CREATE
