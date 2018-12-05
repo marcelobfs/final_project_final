@@ -1,4 +1,6 @@
 ActiveAdmin.register CattleSale do
+
+ permit_params :cattle_id, :brinco, :peso, :preco_por_kilo
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
