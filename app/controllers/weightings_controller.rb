@@ -57,6 +57,14 @@ class WeightingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_cattle
+    @weighting = Weighting.find(params.fetch("id_to_remove"))
+
+    @weighting.destroy
+
+    redirect_to("/cattles/#{@weighting.cattle_id}", notice: "Weighting deleted successfully.")
+  end
+
   def destroy_row
     @weighting = Weighting.find(params.fetch("id_to_remove"))
 

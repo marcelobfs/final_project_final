@@ -55,6 +55,14 @@ class VaccinationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_cattle
+    @vaccination = Vaccination.find(params.fetch("id_to_remove"))
+
+    @vaccination.destroy
+
+    redirect_to("/cattles/#{@vaccination.cattle_id}", notice: "Vaccination deleted successfully.")
+  end
+
   def destroy_row
     @vaccination = Vaccination.find(params.fetch("id_to_remove"))
 

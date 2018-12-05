@@ -93,6 +93,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_vaccination/:id_to_remove", { :controller => "vaccinations", :action => "destroy_row" })
+  get("/delete_vaccination_from_cattle/:id_to_remove", { :controller => "vaccinations", :action => "destroy_row_from_cattle" })
 
   #------------------------------
 
@@ -112,6 +113,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_weighting/:id_to_remove", { :controller => "weightings", :action => "destroy_row" })
+  get("/delete_weighting_from_cattle/:id_to_remove", { :controller => "weightings", :action => "destroy_row_from_cattle" })
 
   #------------------------------
 
@@ -131,6 +133,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_pregnancy/:id_to_remove", { :controller => "pregnancies", :action => "destroy_row" })
+  get("/delete_pregnancy_from_cattle/:id_to_remove", { :controller => "pregnancies", :action => "destroy_row_from_cattle" })
 
   #------------------------------
 

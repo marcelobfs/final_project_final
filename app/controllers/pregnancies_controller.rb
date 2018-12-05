@@ -57,6 +57,14 @@ class PregnanciesController < ApplicationController
     end
   end
 
+  def destroy_row_from_cattle
+    @pregnancy = Pregnancy.find(params.fetch("id_to_remove"))
+
+    @pregnancy.destroy
+
+    redirect_to("/cattles/#{@pregnancy.cattle_id}", notice: "Pregnancy deleted successfully.")
+  end
+
   def destroy_row
     @pregnancy = Pregnancy.find(params.fetch("id_to_remove"))
 
