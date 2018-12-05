@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Pregnancy #<%= @pregnancy.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/pregnancies" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link pregnancy start -->
+      <div class="col">
+        <a href="/pregnancies/<%= @pregnancy.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit pregnancy
+        </a>
+      </div>
+      <!-- Edit link pregnancy end -->
+
+      <!-- Delete link pregnancy start -->
+      <div class="col">
+        <a href="/delete_pregnancy/<%= @pregnancy.id %>" class="btn btn-block btn-outline-secondary">
+          Delete pregnancy
+        </a>
+      </div>
+      <!-- Delete link pregnancy end -->
+    </div>
+
+    <dl>
+      <dt>
+        Cattle
+      </dt>
+      <!-- Display cattle_id start -->
+      <dd>
+        <%= @pregnancy.cattle_id %>
+      </dd>
+      <!-- Display cattle_id end -->
+
+      <dt>
+        Brinco
+      </dt>
+      <!-- Display brinco start -->
+      <dd>
+        <%= @pregnancy.brinco %>
+      </dd>
+      <!-- Display brinco end -->
+
+      <dt>
+        Touro
+      </dt>
+      <!-- Display touro start -->
+      <dd>
+        <%= @pregnancy.touro %>
+      </dd>
+      <!-- Display touro end -->
+
+      <dt>
+        Prenha
+      </dt>
+      <!-- Display prenha start -->
+      <dd>
+        <%= @pregnancy.prenha %>
+      </dd>
+      <!-- Display prenha end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@pregnancy.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@pregnancy.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

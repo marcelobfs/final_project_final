@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Pregnancy resource:
+
+  # CREATE
+  get("/pregnancies/new", { :controller => "pregnancies", :action => "new_form" })
+  post("/create_pregnancy", { :controller => "pregnancies", :action => "create_row" })
+
+  # READ
+  get("/pregnancies", { :controller => "pregnancies", :action => "index" })
+  get("/pregnancies/:id_to_display", { :controller => "pregnancies", :action => "show" })
+
+  # UPDATE
+  get("/pregnancies/:prefill_with_id/edit", { :controller => "pregnancies", :action => "edit_form" })
+  post("/update_pregnancy/:id_to_modify", { :controller => "pregnancies", :action => "update_row" })
+
+  # DELETE
+  get("/delete_pregnancy/:id_to_remove", { :controller => "pregnancies", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Cattle resource:
 
   # CREATE
