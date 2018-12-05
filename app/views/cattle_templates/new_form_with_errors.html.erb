@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @cattle.present? %>
   <% if @cattle.errors.any? %>
     <% @cattle.errors.full_messages.each do |message| %>
@@ -16,141 +15,95 @@
 
 <hr>
 
-<!-- Form cattle start -->
 <form action="/create_cattle" method="post">
-<!-- Form cattle end -->
 
-  <!-- Label and input for brinco start -->
   <div class="form-group">
     <label for="brinco">
       Brinco
     </label>
 
-    <!-- Input for brinco start -->
     <input type="text" id="brinco" name="brinco" class="form-control" value="<%= @cattle.brinco %>">
-    <!-- Input for brinco end -->
   </div>
-  <!-- Label and input for brinco end -->
 
-  <!-- Label and input for data_compra_ou_desmame start -->
   <div class="form-group">
     <label for="data_compra_ou_desmame">
       Data compra ou desmame
     </label>
 
-    <!-- Input for data_compra_ou_desmame start -->
     <input type="text" id="data_compra_ou_desmame" name="data_compra_ou_desmame" class="form-control" value="<%= @cattle.data_compra_ou_desmame %>">
-    <!-- Input for data_compra_ou_desmame end -->
   </div>
-  <!-- Label and input for data_compra_ou_desmame end -->
 
-  <!-- Label and input for data_nascimento start -->
   <div class="form-group">
     <label for="data_nascimento">
       Data nascimento
     </label>
 
-    <!-- Input for data_nascimento start -->
     <input type="text" id="data_nascimento" name="data_nascimento" class="form-control" value="<%= @cattle.data_nascimento %>">
-    <!-- Input for data_nascimento end -->
   </div>
-  <!-- Label and input for data_nascimento end -->
 
-  <!-- Label and input for origem start -->
   <div class="form-group">
     <label for="origem">
       Origem
     </label>
 
-    <!-- Input for origem start -->
     <input type="text" id="origem" name="origem" class="form-control" value="<%= @cattle.origem %>">
-    <!-- Input for origem end -->
   </div>
-  <!-- Label and input for origem end -->
 
-  <!-- Label and input for raca start -->
   <div class="form-group">
     <label for="raca">
       Raca
     </label>
 
-    <!-- Input for raca start -->
     <input type="text" id="raca" name="raca" class="form-control" value="<%= @cattle.raca %>">
-    <!-- Input for raca end -->
   </div>
-  <!-- Label and input for raca end -->
 
-  <!-- Label and input for sexo start -->
   <div class="form-group">
     <label for="sexo">
       Sexo
     </label>
 
-    <!-- Input for sexo start -->
     <input type="text" id="sexo" name="sexo" class="form-control" value="<%= @cattle.sexo %>">
-    <!-- Input for sexo end -->
   </div>
-  <!-- Label and input for sexo end -->
 
-  <!-- Label and input for pai start -->
   <div class="form-group">
     <label for="pai">
       Pai
     </label>
 
-    <!-- Input for pai start -->
     <input type="text" id="pai" name="pai" class="form-control" value="<%= @cattle.pai %>">
-    <!-- Input for pai end -->
   </div>
-  <!-- Label and input for pai end -->
 
-  <!-- Label and input for brinco_mae start -->
   <div class="form-group">
     <label for="brinco_mae">
       Brinco mae
     </label>
 
-    <!-- Input for brinco_mae start -->
     <input type="text" id="brinco_mae" name="brinco_mae" class="form-control" value="<%= @cattle.brinco_mae %>">
-    <!-- Input for brinco_mae end -->
   </div>
-  <!-- Label and input for brinco_mae end -->
 
-  <!-- Label and input for peso_entrada start -->
   <div class="form-group">
     <label for="peso_entrada">
       Peso entrada
     </label>
 
-    <!-- Input for peso_entrada start -->
     <input type="text" id="peso_entrada" name="peso_entrada" class="form-control" value="<%= @cattle.peso_entrada %>">
-    <!-- Input for peso_entrada end -->
   </div>
-  <!-- Label and input for peso_entrada end -->
 
-  <!-- Label and input for preco_por_kilo start -->
   <div class="form-group">
     <label for="preco_por_kilo">
       Preco por kilo
     </label>
 
-    <!-- Input for preco_por_kilo start -->
     <input type="text" id="preco_por_kilo" name="preco_por_kilo" class="form-control" value="<%= @cattle.preco_por_kilo %>">
-    <!-- Input for preco_por_kilo end -->
   </div>
-  <!-- Label and input for preco_por_kilo end -->
 
-  <!-- Label and input for status start -->
   <div class="form-group">
     <label for="status">
       Status
     </label>
 
-    <!-- Input for status start -->
     <input type="text" id="status" name="status" class="form-control" value="<%= @cattle.status %>">
-    <!-- Input for status end -->
   </div>
-  <!-- Label and input for status end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create cattle

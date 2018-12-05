@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @cattle.weightings.each do |weighting| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/weightings/<%= weighting.id %>">
           <%= weighting.cattle_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_weighting_from_cattle/<%= weighting.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="cattle_weightings_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "cattle_templates/cattle_weightings_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

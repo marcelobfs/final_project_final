@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link cattle_sale start -->
       <div class="col">
         <a href="/cattle_sales/<%= @cattle_sale.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit cattle sale
         </a>
       </div>
-      <!-- Edit link cattle_sale end -->
 
-      <!-- Delete link cattle_sale start -->
       <div class="col">
         <a href="/delete_cattle_sale/<%= @cattle_sale.id %>" class="btn btn-block btn-outline-secondary">
           Delete cattle sale
         </a>
       </div>
-      <!-- Delete link cattle_sale end -->
     </div>
 
     <dl>
       <dt>
         Cattle
       </dt>
-      <!-- Display cattle_id start -->
       <dd>
         <% if @cattle_sale.cattle.present? %>
           <a href="/cattles/<%= @cattle_sale.cattle_id %>">
@@ -40,55 +35,42 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display cattle_id end -->
 
       <dt>
         Brinco
       </dt>
-      <!-- Display brinco start -->
       <dd>
         <%= @cattle_sale.brinco %>
       </dd>
-      <!-- Display brinco end -->
 
       <dt>
         Peso
       </dt>
-      <!-- Display peso start -->
       <dd>
         <%= @cattle_sale.peso %>
       </dd>
-      <!-- Display peso end -->
 
       <dt>
         Preco por kilo
       </dt>
-      <!-- Display preco_por_kilo start -->
       <dd>
         <%= @cattle_sale.preco_por_kilo %>
       </dd>
-      <!-- Display preco_por_kilo end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@cattle_sale.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@cattle_sale.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

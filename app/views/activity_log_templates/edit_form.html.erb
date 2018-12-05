@@ -4,57 +4,39 @@
 
 <hr>
 
-<!-- Form activity_log start -->
 <form action="/update_activity_log/<%= @activity_log.id %>" method="post">
-<!-- Form activity_log end -->
 
-  <!-- Label and input for user_name start -->
   <div class="form-group">
     <label for="user_name">
       User name
     </label>
 
-    <!-- Input for user_name start -->
     <input type="text" id="user_name" name="user_name" class="form-control" value="<%= @activity_log.user_name %>">
-    <!-- Input for user_name end -->
   </div>
-  <!-- Label and input for user_name end -->
 
-  <!-- Label and input for action start -->
   <div class="form-group">
     <label for="action">
       Action
     </label>
 
-    <!-- Input for action start -->
     <input type="text" id="action" name="action" class="form-control" value="<%= @activity_log.action %>">
-    <!-- Input for action end -->
   </div>
-  <!-- Label and input for action end -->
 
-  <!-- Label and input for activity_description start -->
   <div class="form-group">
     <label for="activity_description">
       Activity description
     </label>
 
-    <!-- Input for activity_description start -->
     <input type="text" id="activity_description" name="activity_description" class="form-control" value="<%= @activity_log.activity_description %>">
-    <!-- Input for activity_description end -->
   </div>
-  <!-- Label and input for activity_description end -->
 
-  <!-- Label and input for file_name start -->
   <div class="form-group">
     <label for="file_name">
       File name
     </label>
 
-    <!-- Input for file_name start -->
     <input type="text" id="file_name" name="file_name" class="form-control" value="<%= @activity_log.file_name %>">
-    <!-- Input for file_name end -->
   </div>
-  <!-- Label and input for file_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update activity log

@@ -4,57 +4,39 @@
 
 <hr>
 
-<!-- Form weighting start -->
 <form action="/update_weighting/<%= @weighting.id %>" method="post">
-<!-- Form weighting end -->
 
-  <!-- Label and input for cattle_id start -->
   <div class="form-group">
     <label for="cattle_id">
       Cattle
     </label>
 
-    <!-- Input for cattle_id start -->
     <%= select_tag(:cattle_id, options_from_collection_for_select(Cattle.all, :id, :brinco, @weighting.cattle_id), :class => "form-control") %>
-    <!-- Input for cattle_id end -->
   </div>
-  <!-- Label and input for cattle_id end -->
 
-  <!-- Label and input for brinco start -->
   <div class="form-group">
     <label for="brinco">
       Brinco
     </label>
 
-    <!-- Input for brinco start -->
     <input type="text" id="brinco" name="brinco" class="form-control" value="<%= @weighting.brinco %>">
-    <!-- Input for brinco end -->
   </div>
-  <!-- Label and input for brinco end -->
 
-  <!-- Label and input for lote start -->
   <div class="form-group">
     <label for="lote">
       Lote
     </label>
 
-    <!-- Input for lote start -->
     <input type="text" id="lote" name="lote" class="form-control" value="<%= @weighting.lote %>">
-    <!-- Input for lote end -->
   </div>
-  <!-- Label and input for lote end -->
 
-  <!-- Label and input for peso start -->
   <div class="form-group">
     <label for="peso">
       Peso
     </label>
 
-    <!-- Input for peso start -->
     <input type="text" id="peso" name="peso" class="form-control" value="<%= @weighting.peso %>">
-    <!-- Input for peso end -->
   </div>
-  <!-- Label and input for peso end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update weighting

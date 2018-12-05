@@ -11,89 +11,69 @@
         </a>
       </div>
 
-      <!-- Edit link market_price start -->
       <div class="col">
         <a href="/market_prices/<%= @market_price.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit market price
         </a>
       </div>
-      <!-- Edit link market_price end -->
 
-      <!-- Delete link market_price start -->
       <div class="col">
         <a href="/delete_market_price/<%= @market_price.id %>" class="btn btn-block btn-outline-secondary">
           Delete market price
         </a>
       </div>
-      <!-- Delete link market_price end -->
     </div>
 
     <dl>
       <dt>
         Last update
       </dt>
-      <!-- Display last_update start -->
       <dd>
         <%= @market_price.last_update %>
       </dd>
-      <!-- Display last_update end -->
 
       <dt>
         Observation
       </dt>
-      <!-- Display observation start -->
       <dd>
         <%= @market_price.observation %>
       </dd>
-      <!-- Display observation end -->
 
       <dt>
         Age group
       </dt>
-      <!-- Display age_group start -->
       <dd>
         <%= @market_price.age_group %>
       </dd>
-      <!-- Display age_group end -->
 
       <dt>
         Gender
       </dt>
-      <!-- Display gender start -->
       <dd>
         <%= @market_price.gender %>
       </dd>
-      <!-- Display gender end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @market_price.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@market_price.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@market_price.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

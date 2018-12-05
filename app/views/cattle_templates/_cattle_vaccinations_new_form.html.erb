@@ -1,35 +1,22 @@
-<!-- Form vaccination start -->
 <form action="/create_vaccination_from_cattle" method="post">
-<!-- Form vaccination end -->
 
-  <!-- Label and input for cattle_id start -->
-  <!-- Input for cattle_id start -->
   <input type="hidden" name="cattle_id" value="<%= @cattle.id %>">
-  <!-- Input for cattle_id end -->
 
-  <!-- Label and input for brinco start -->
   <div class="form-group">
     <label for="brinco">
       Brinco
     </label>
 
-    <!-- Input for brinco start -->
     <input type="text" id="brinco" name="brinco" class="form-control" value="<%= @vaccination.brinco %>">
-    <!-- Input for brinco end -->
   </div>
-  <!-- Label and input for brinco end -->
 
-  <!-- Label and input for tipo_vacina start -->
   <div class="form-group">
     <label for="tipo_vacina">
       Tipo vacina
     </label>
 
-    <!-- Input for tipo_vacina start -->
     <input type="text" id="tipo_vacina" name="tipo_vacina" class="form-control" value="<%= @vaccination.tipo_vacina %>">
-    <!-- Input for tipo_vacina end -->
   </div>
-  <!-- Label and input for tipo_vacina end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create vaccination

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "market_price_templates/market_prices_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,53 +62,37 @@
 
       <% @market_prices.each do |market_price| %>
       <tr>
-        <!-- Display market_price.id start -->
         <td>
           <%= market_price.id %>
         </td>
-        <!-- Display market_price.id end -->
 
-        <!-- Display market_price.last_update start -->
         <td>
           <%= market_price.last_update %>
         </td>
-        <!-- Display market_price.last_update end -->
 
-        <!-- Display market_price.observation start -->
         <td>
           <%= market_price.observation %>
         </td>
-        <!-- Display market_price.observation end -->
 
-        <!-- Display market_price.age_group start -->
         <td>
           <%= market_price.age_group %>
         </td>
-        <!-- Display market_price.age_group end -->
 
-        <!-- Display market_price.gender start -->
         <td>
           <%= market_price.gender %>
         </td>
-        <!-- Display market_price.gender end -->
 
-        <!-- Display market_price.price start -->
         <td>
           <%= market_price.price %>
         </td>
-        <!-- Display market_price.price end -->
 
-        <!-- Display market_price.created_at start -->
         <td>
           <%= time_ago_in_words(market_price.created_at) %> ago
         </td>
-        <!-- Display market_price.created_at end -->
 
-        <!-- Display market_price.updated_at start -->
         <td>
           <%= time_ago_in_words(market_price.updated_at) %> ago
         </td>
-        <!-- Display market_price.updated_at end -->
 
         <td>
           <a href="/market_prices/<%= market_price.id %>">
