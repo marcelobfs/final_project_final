@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for cattle_id start -->
-    <input type="text" id="cattle_id" name="cattle_id" class="form-control">
+    <%= select_tag(:cattle_id, options_from_collection_for_select(Cattle.all, :id, :brinco, @vaccination.cattle_id), :class => "form-control") %>
     <!-- Input for cattle_id end -->
   </div>
   <!-- Label and input for cattle_id end -->
