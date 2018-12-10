@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   post("/import_sales", { :controller => "cattle_sales", :action => "import" })
   post("/import_vaccinations", { :controller => "vaccinations", :action => "import" })
   post("/import_weightings", { :controller => "weightings", :action => "import" })
+    
+  # Routes for the Export actions:
+  
+  get("/export_cattle_sales", { :controller => "cattle_sales", :action => "export" })
   
   # Routes for the Market price resource:
 

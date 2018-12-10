@@ -2,7 +2,7 @@ class CattleSalesController < ApplicationController
   def index
     @q = CattleSale.ransack(params[:q])
     @cattle_sales = @q.result(:distinct => true).includes(:cattle).page(params[:page]).per(10)
-
+    
     render("cattle_sale_templates/index.html.erb")
   end
 
@@ -69,7 +69,19 @@ class CattleSalesController < ApplicationController
   def import
     CattleSale.import(params[:file])
     record_activity("Subiu controle de vendas")
-    redirect_to("/uploads", :notice => "Dados de venda importados com sucesso!")
+    redirect_to("/cattle_sales", :notice => "Dados de venda importados com sucesso!")
 
   end
+  
+  def export
+    
+    @cattle_sales = CattleSale.all
+    
+    respond_to do |format|
+    format.xlsx
+    end
+    render template: "cattle_sale_templates/export.xlsx.axlsx"
+  end
+  
+  
 end

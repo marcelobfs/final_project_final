@@ -1,0 +1,154 @@
+<div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar px-1">
+          <div class="sidebar-sticky">
+            
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Arquivos</span>
+            </h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="/cattles">
+                  Catalogo
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/weightings">
+                  Pesagem
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/vaccinations">
+                  Vacinação
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pregnancies">
+                  Gravidez
+                 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cattle_sales">
+                Vendas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/deaths">
+                Fatalidade
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Relatórios Gerenciais</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+               <i class="fas fa-plus-circle"></i></a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+
+              <li class="nav-item d-flex align-items-center pl-4">
+                <i class="far fa-file-alt"></i> <%= link_to " Vendas", export_cattle_sales_path(format: "xlsx") %>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="far fa-file-alt"></i>   Rentabilidade
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="far fa-file-alt"></i>   Ganho de Peso
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="far fa-file-alt"></i>   Custeio
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+              <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div>
+                  <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Peso Médio</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <!--<button class="btn btn-sm btn-outline-secondary">Export</button>-->
+              </div>
+            </div>
+          </div>
+
+          <canvas class="my-4 chartjs-render-monitor" id="myChart" width="1232" height="520" style="display: block; height: 260px; width: 616px;"></canvas>
+
+          <!--<h2>Peso rebanho</h2><div class="table-responsive"><div class="col-md-12"></div></div>-->
+          
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Lote A", "Lote B", "Lote C", "Lote D"],
+          datasets: [{
+            data: 
+
+              <%= @output %>,
+            
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              ticks: {
+                beginAtZero: false,
+                    }
+                }
+            ],
+            yAxes: [{
+              ticks: {
+                min: 0,
+                max: 600,
+                beginAtZero: true
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  
+
+</body>

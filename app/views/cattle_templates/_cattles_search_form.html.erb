@@ -1,5 +1,8 @@
 <%= search_form_for @q, :class => collapse_search_form, :id => "cattles_filters" do |f| %>
   <p class="lead">Narrow results:</p>
+  
+  <div class="row">
+  <div class="container col-md-3">
 
   <div class="form-group">
     <%= f.label :brinco_cont, "Brinco contains" %>
@@ -12,30 +15,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :preco_por_kilo, "Preco por kilo" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <%= f.text_field :preco_por_kilo_gteq, :class => "form-control", :placeholder => "Preco por kilo greater than or equal to" %>
-      </div>
-      <div class='col-md-6'>
-        <%= f.text_field :preco_por_kilo_lteq, :class => "form-control", :placeholder => "Preco por kilo less than or equal to" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :peso_entrada, "Peso entrada" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <%= f.text_field :peso_entrada_gteq, :class => "form-control", :placeholder => "Peso entrada greater than or equal to" %>
-      </div>
-      <div class='col-md-6'>
-        <%= f.text_field :peso_entrada_lteq, :class => "form-control", :placeholder => "Peso entrada less than or equal to" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group">
     <%= f.label :brinco_mae_cont, "Brinco mae contains" %>
     <%= f.text_field :brinco_mae_cont, :class => "form-control", :placeholder => "Brinco mae contains" %>
   </div>
@@ -44,7 +23,8 @@
     <%= f.label :pai_cont, "Pai contains" %>
     <%= f.text_field :pai_cont, :class => "form-control", :placeholder => "Pai contains" %>
   </div>
-
+</div>
+<div class="container col-md-3">
   <div class="form-group">
     <%= f.label :sexo_cont, "Sexo contains" %>
     <%= f.text_field :sexo_cont, :class => "form-control", :placeholder => "Sexo contains" %>
@@ -59,7 +39,8 @@
     <%= f.label :origem_cont, "Origem contains" %>
     <%= f.text_field :origem_cont, :class => "form-control", :placeholder => "Origem contains" %>
   </div>
-
+</div>
+<div class="container col-md-6">
   <div class="form-group">
     <%= f.label :data_nascimento, "Data nascimento" %>
     <div class="row">
@@ -82,6 +63,7 @@
       </div>
     </div>
   </div>
+ 
   <script type="text/javascript">
       $(function () {
           $('#data_nascimentogteqPicker').datetimepicker({
@@ -161,6 +143,8 @@
         </div>
       </div>
     </div>
+  </div>
+   </div>
   </div>
   <script type="text/javascript">
       $(function () {

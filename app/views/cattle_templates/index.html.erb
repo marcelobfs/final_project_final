@@ -1,10 +1,10 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <h1>
-      All cattles
+      All cattle
     </h1>
 
-    <a href="/cattles/new" class="btn btn-block btn-outline-secondary">
+    <a href="/cattle/new" class="btn btn-block btn-outline-secondary">
       Add a new cattle
     </a>
   </div>
@@ -41,35 +41,35 @@
         </th>
 
         <th>
-          Origem
+        Origem
         </th>
-
+        
         <th>
-          Raca
+        Raça
         </th>
-
+        
         <th>
-          Sexo
+        Sexo
         </th>
-
+        
         <th>
-          Pai
+        Pai
         </th>
-
+        
         <th>
-          Brinco mae
+        Brinco Mãe
         </th>
-
+        
         <th>
-          Peso entrada
+        Peso Entrada
         </th>
-
+        
         <th>
-          Preco por kilo
+        Preco por Kilo
         </th>
-
+        
         <th>
-          Status
+        Status
         </th>
 
         <th>
@@ -95,34 +95,34 @@
         </td>
 
         <td>
-          <%= cattle.data_compra_ou_desmame %>
+          <%= cattle.data_compra_ou_desmame.try(:strftime, '%d/%m/%y') %>
         </td>
-
-        <td>
-          <%= cattle.data_nascimento %>
+        
+                <td>
+          <%= cattle.data_nascimento.try(:strftime, '%d/%m/%y') %>
         </td>
-
-        <td>
+        
+                <td>
           <%= cattle.origem %>
         </td>
-
-        <td>
+        
+                <td>
           <%= cattle.raca %>
         </td>
-
-        <td>
+        
+                <td>
           <%= cattle.sexo %>
         </td>
-
-        <td>
+        
+                <td>
           <%= cattle.pai %>
         </td>
-
-        <td>
+        
+                        <td>
           <%= cattle.brinco_mae %>
         </td>
-
-        <td>
+        
+                        <td>
           <%= cattle.peso_entrada %>
         </td>
 

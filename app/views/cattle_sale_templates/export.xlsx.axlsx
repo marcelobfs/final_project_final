@@ -1,0 +1,14 @@
+
+
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Sales", layout: false) do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w(brinco peso preco_por_kilo)
+  
+  # each user is a row on your spreadsheet
+  @cattle_sales.each do |open|
+    sheet.add_row [open.brinco, open.peso, open.preco_por_kilo]
+  end
+end

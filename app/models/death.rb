@@ -7,4 +7,6 @@ class Death < ApplicationRecord
 
   # Validations
 
+validates :brinco, uniqueness: true
+
 end

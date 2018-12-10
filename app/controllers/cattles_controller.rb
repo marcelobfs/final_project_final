@@ -86,7 +86,7 @@ class CattlesController < ApplicationController
   def import
     Cattle.import(params[:file])
     record_activity("Subiu controle de compras")
-    redirect_to("/uploads", :notice => "Dados de compra importados com sucesso!")
+    redirect_to("/cattles", :notice => "Dados de compra importados com sucesso!")
 
   end
 end

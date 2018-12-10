@@ -5,15 +5,22 @@ class Cattle < ApplicationRecord
       def self.update_weaning(file)
          CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
             
+            unformatted_date = row[:data]
+            date = Date.strptime(unformatted_date, "%d/%m/%y")
+            row[:data_compra_ou_desmame] = date
+            row = row.tap { |hs| hs.delete(:data) }
+            
             row_to_update = Cattle.where(brinco: row[:brinco])
             
             brinco_mae ={}
-            row_to_update.each do |find_cow|
-            brinco_mae[:brinco_mae] = find_cow.brinco_mae
+            sexo = {}
+            row_to_update.each do |find|
+            brinco_mae[:brinco_mae] = find.brinco_mae
+            sexo[:sexo] = find.sexo
             end
             
-            MarketPrice.order('created_at desc').limit(1).each do |cur_price|
-            row[:price_per_kilo] = cur_price.current_price
+            MarketPrice.where(gender: sexo[:sexo]).order('created_at desc').limit(1).each do |cur_price|
+            row[:preco_por_kilo] = cur_price.price
             end
             
             row[:status] = "engorda"
@@ -36,11 +43,16 @@ class Cattle < ApplicationRecord
          CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
          
          row[:status] = "mamando"
-         row[:origem] = "crioulo"
+         row[:origem] = "Crioulo"
+         
+         unformatted_date = row[:data_nascimento]
+         date = Date.strptime(unformatted_date, "%d/%m/%y")
+         row[:data_nascimento] = date
+
          
          Cattle.create! row.to_hash
          
-         vaca = Pregnancy.where(brinco: row[:brinco_mae])
+         vaca = Pregnancy.where(brinco: row[:brinco_mae],prenha: nil)
          row_to_update = Cattle.where(brinco: row[:brinco])
          cow_to_update = Cattle.where(brinco: row[:brinco_mae])
             
@@ -66,6 +78,14 @@ class Cattle < ApplicationRecord
       
       def self.import(file)
          CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
+            
+         unformatted_date = row[:data_compra_ou_desmame]
+         date = Date.strptime(unformatted_date, "%d/%m/%y")
+         row[:data_compra_ou_desmame] = date
+         
+         unformatted_date = row[:data_nascimento]
+         date = Date.strptime(unformatted_date, "%d/%m/%y")
+         row[:data_nascimento] = date
          
          row[:status] = "engorda"
          
@@ -93,5 +113,7 @@ class Cattle < ApplicationRecord
   # Indirect associations
 
   # Validations
+
+  validates :brinco, uniqueness: true
 
 end

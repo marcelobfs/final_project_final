@@ -25,17 +25,21 @@ class DeathsController < ApplicationController
     @death.brinco = params.fetch("brinco")
     @death.causa = params.fetch("causa")
             
-            catalog = Cattle.where(brinco: @death.brinco)
+            @catalog = Cattle.where(brinco: @death.brinco)
             
             id={}
-            catalog.each do |cattle_id|
+            @catalog.each do |cattle_id|
             id[:cattle_id] = cattle_id.id
             end
             
             @death.cattle_id = id[:cattle_id]
+    
+    @cattle = Cattle.where(brinco: @death.brinco).find(@death.cattle_id)
+    @cattle.status = "morto"
 
     if @death.valid?
       @death.save
+      @cattle.save
       record_activity("Registrou fatalidade")
       redirect_back(:fallback_location => "/deaths", :notice => "Death created successfully.")
     else

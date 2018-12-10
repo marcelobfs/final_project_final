@@ -1,11 +1,11 @@
  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="/"><i class="fas fa-chart-line"></i> Coqueiro</a>
+      <a class="navbar-brand" href="/"><i class="fas fa-chart-line"></i> Fazenda Coqueiro</a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes" aria-expanded="false">Rebanho <span class="caret"></span></a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes" aria-expanded="false">Manual <span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="themes">
                 <a class="dropdown-item" href="/deaths/new">Fatalidade</a>
               </div>
@@ -15,10 +15,14 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/reports" id="themes" aria-expanded="false">Relatórios <span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="themes">
                 <a class="dropdown-item" href="/reports">Relatórios</a>
+                <hr>
+                <a class="dropdown-item" href="/cattles">Catalogo</a>
                 <a class="dropdown-item" href="/weightings">Pesagem</a>
                 <a class="dropdown-item" href="/vaccinations">Vacinação</a>
                 <a class="dropdown-item" href="/pregnancies">Gravidez</a>
-                <a class="dropdown-item" href="/cattle">Catalogo</a>
+                <a class="dropdown-item" href="/cattle_sales">Vendas</a>
+                <a class="dropdown-item" href="/deaths">Mortes</a>
+                
               </div>
             </li>
         </ul>
@@ -32,16 +36,16 @@
             </a>
           </li>
           
-          <li class="nav-item">
-            <a href="/users/sign_up" class="nav-link" >
-              Create Account
-            </a>
-          </li>
+          <!--<li class="nav-item">-->
+          <!--  <a href="/users/sign_up" class="nav-link" >-->
+          <!--    Create Account-->
+          <!--  </a>-->
+          <!--</li>-->
           
           <% else %>
           
           <li class="nav-item">
-            <a href="/users/edit" class="nav-link" >
+            <a href="#" class="nav-link" >
               <%= current_user.first_name %>
             </a>
           </li>
